@@ -59,7 +59,7 @@ $p = mysqli_fetch_object($pengguna);
 						");
 
 						if($update){
-							echo '<div class="alert alert-success">Berhasil mengubah data!</div>';
+							echo '<script>window.location = "pengguna.php?msg=Edit data berhasil!";</script>';
 						} else {
 							echo '<div class="alert alert-error">Gagal mengubah data!</div>';
 						}

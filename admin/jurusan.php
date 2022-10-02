@@ -10,6 +10,12 @@
 
 				<a href="tambah-jurusan.php" class="text-green">+ Tambah Jurusan</a>
 
+				<?php
+					if (isset($_GET['msg'])){
+						echo "<div class='alert alert-success'>{$_GET['msg']}</div>";
+					}
+				?>
+
 				<form action="">
 					<div class="input-group">
 						<input type="text" name="key" placeholder="pencarian" />
@@ -44,9 +50,11 @@
 								<td><?= $no++ ?></td>
 								<td><?= $p['nama'] ?></td>
 								<td><?= $p['keterangan'] ?></td>
-								<td><img src="../uploads/jurusan/<?= $p['gambar'] ?>" width="100" /></td>
 								<td>
-									<a href="edit-jurusan.php?id=<?= $p['id'] ?>"
+									<img src="../uploads/jurusan/<?= $p['gambar'] ?>" width="100" />
+								</td>
+								<td>
+									<a href="edit-jurusan.php?idjurusan=<?= $p['id'] ?>"
 										title="Edit data" class="text-orange">Edit</a>
 									<a href="hapus.php?idjurusan=<?= $p['id'] ?>"
 										onclick="return confirm('Yakin ingin menghapus?')"

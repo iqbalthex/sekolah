@@ -55,7 +55,7 @@
 							)");
 
 							if($simpan){
-								echo '<div class="alert alert-success">Berhasil menyimpan!</div>';
+								echo '<script>window.location = "jurusan.php?msg=Berhasil menyimpan!";</script>';
 							} else {
 								echo '<div class="alert alert-error">Gagal menyimpan!</div>';
 							}

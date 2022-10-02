@@ -10,6 +10,12 @@
 
 				<a href="tambah-pengguna.php" class="text-green">+ Tambah</a>
 
+				<?php
+					if (isset($_GET['msg'])){
+						echo "<div class='alert alert-success'>{$_GET['msg']}</div>";
+					}
+				?>
+
 				<form action="">
 					<div class="input-group">
 						<input type="text" name="key" placeholder="pencarian" />
