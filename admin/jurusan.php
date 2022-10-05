@@ -1,3 +1,5 @@
+<!-- mirip file pengguna.php -->
+
 <?php include 'header.php'; ?>
 
 <div class="content">
@@ -7,12 +9,12 @@
 				Jurusan
 			</div>
 			<div class="box-body">
-
 				<a href="tambah-jurusan.php" class="text-green">+ Tambah Jurusan</a>
-
 				<?php
 					if (isset($_GET['msg'])){
-						echo "<div class='alert alert-success'>{$_GET['msg']}</div>";
+						echo "<div class='alert alert-success'>
+							{$_GET['msg']}
+						</div>";
 					}
 				?>
 

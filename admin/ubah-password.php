@@ -1,3 +1,5 @@
+<!-- mirip file edit-pengguna.php -->
+
 <?php include 'header.php'; ?>
 
 <div class="content">
@@ -28,18 +30,24 @@
 						$curr_date = date('Y-m-d H:i:s');
 
 						if($pass1 != $pass2){
-							echo '<div class="alert alert-error">Ulangi password tidak sesuai!</div>';
+							echo '<div class="alert alert-error">
+								Ulangi password tidak sesuai!
+							</div>';
 						} else {
 							$update = mysqli_query($conn, "UPDATE pengguna SET
-								password = '" . md5($pass1) . "',
-								updated_at = '$curr_date'
-								WHERE id = {$_SESSION['uid']}
+								password		= '" . md5($pass1) . "',
+								updated_at	= '$curr_date'
+								WHERE id		= {$_SESSION['uid']}
 							");
 
 							if($update){
-								echo '<div class="alert alert-success">Berhasil mengubah password!</div>';
+								echo '<div class="alert alert-success">
+									Berhasil mengubah password!
+								</div>';
 							} else {
-								echo '<div class="alert alert-error">Gagal mengubah password!</div>';
+								echo '<div class="alert alert-error">
+									Gagal mengubah password!
+								</div>';
 							}
 						}
 

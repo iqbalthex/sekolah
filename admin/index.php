@@ -1,3 +1,4 @@
+<!-- menyisipkan isi dari file header.php -->
 <?php include 'header.php'; ?>
 
 <div class="content">
@@ -13,4 +14,5 @@
 	</div>
 </div>
 
+<!-- menyisipkan isi dari file footer.php -->
 <?php include 'footer.php'; ?>

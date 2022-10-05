@@ -1,3 +1,5 @@
+<!-- mirip file tambah-pengguna.php -->
+
 <?php include 'header.php'; ?>
 
 <div class="content">
@@ -34,9 +36,13 @@
 						$allowed_type = ['png','jpg','jpeg','gif'];
 
 						if(!in_array($format, $allowed_type)){
-							echo '<div class="alert alert-error">Format file tidak diizinkan!</div>';
+							echo '<div class="alert alert-error">
+								Format file tidak diizinkan!
+							</div>';
 						} elseif($filesize > 1000000){
-							echo '<div class="alert alert-error">Ukuran file tidak boleh lebih dari 1 Mb!</div>';
+							echo '<div class="alert alert-error">
+								Ukuran file tidak boleh lebih dari 1 Mb!
+							</div>';
 						} else {
 							move_uploaded_file($tmpname, "../uploads/galeri/$rename");
 
@@ -49,9 +55,13 @@
 							)");
 
 							if($simpan){
-								echo '<script>window.location = "galeri.php?msg=Berhasil menyimpan!";</script>';
+								echo '<script>
+									window.location = "galeri.php?msg=Berhasil menyimpan!";
+								</script>';
 							} else {
-								echo '<div class="alert alert-error">Gagal menyimpan!</div>';
+								echo '<div class="alert alert-error">
+									Gagal menyimpan!
+								</div>';
 							}
 						}
 					}

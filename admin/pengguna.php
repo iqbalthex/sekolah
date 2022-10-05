@@ -6,13 +6,14 @@
 			<div class="box-header">
 				Pengguna
 			</div>
+
 			<div class="box-body">
-
 				<a href="tambah-pengguna.php" class="text-green">+ Tambah</a>
-
 				<?php
-					if (isset($_GET['msg'])){
-						echo "<div class='alert alert-success'>{$_GET['msg']}</div>";
+					if (isset($_GET['msg'])){ # tampilkan pesan bila ada
+						echo "<div class='alert alert-success'>
+							{$_GET['msg']}
+						</div>";
 					}
 				?>
 
@@ -33,17 +34,20 @@
 							<th>Aksi</th>
 						</tr>
 					</thead>
+
 					<tbody>
 						<?php
 							$no = 1;
-
 							$where = " WHERE 1=1";
+
+							# menyisipkan kata kunci untuk fitur pencarian
 							if (isset($_GET['key'])){
 								$where .= " AND nama LIKE '%" . addslashes($_GET['key']) . "%'";
 							}
 
 							$pengguna = mysqli_query($conn, "SELECT * FROM pengguna $where ORDER BY id DESC");
 							if (mysqli_num_rows($pengguna) > 0){
+								# tampilkan semua data pengguna
 								while($p = mysqli_fetch_array($pengguna)){
 						?>
 							<tr>
@@ -59,7 +63,11 @@
 										title="Hapus data" class="text-red">Hapus</a>
 								</td>
 							</tr>
-						<?php }} else { ?>
+						<?php
+								}
+							} else {
+								# muncul bila database kosong
+						?>
 						<tr>
 							<td colspan="5">Data tidak ada</td>
 						</tr>

@@ -36,9 +36,14 @@
 						$pass = md5('123456');
 						$curr_date = date('Y-m-d H:i:s');
 
-						$cek = mysqli_query($conn, "SELECT username FROM pengguna WHERE username = '$user'");
+						# cek apakah username sudah digunakan atau belum
+						$cek = mysqli_query($conn,
+							"SELECT username FROM pengguna WHERE username = '$user'"
+						);
 						if(mysqli_num_rows($cek) > 0){
-							echo '<div class="alert alert-error">Username sudah digunakan!</div>';
+							echo '<div class="alert alert-error">
+								Username sudah digunakan!
+							</div>';
 						} else {
 							$simpan = mysqli_query($conn, "INSERT INTO pengguna VALUES(
 								'',
@@ -51,9 +56,13 @@
 							)");
 
 							if($simpan){
-								echo '<script>window.location = "pengguna.php?msg=Berhasil menyimpan!";</script>';
+								echo '<script>
+									window.location = "pengguna.php?msg=Berhasil menyimpan!";
+								</script>';
 							} else {
-								echo '<div class="alert alert-error">Gagal menyimpan!</div>';
+								echo '<div class="alert alert-error">
+									Gagal menyimpan!
+								</div>';
 							}
 						}
 					}

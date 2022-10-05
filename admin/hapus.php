@@ -2,16 +2,23 @@
 
 include '../koneksi.php';
 
+/* kueri untuk menghapus data pengguna * * * * * * * * * * * * * */
 if (isset($_GET['id'])){
-	$delete = mysqli_query($conn, "DELETE FROM pengguna WHERE id = {$_GET['id']}");
+	$delete = mysqli_query($conn,
+		"DELETE FROM pengguna WHERE id = {$_GET['id']}"
+	);
 	echo '<script>
 		window.location = "pengguna.php?msg=Berhasil menghapus data!";
 	</script>';
 }
+/* * * * * * * * * *  end of kueri untuk menghapus data pengguna */
 
+
+/* kueri untuk menghapus data jurusan  * * * * * * * * * * * * * */
 if (isset($_GET['idjurusan'])){
-
-	$jurusan = mysqli_query($conn, "SELECT gambar FROM jurusan WHERE id = {$_GET['idjurusan']}");
+	$jurusan = mysqli_query($conn,
+		"SELECT gambar FROM jurusan WHERE id = {$_GET['idjurusan']}"
+	);
 
 	if(mysqli_num_rows($jurusan) > 0){
 		$p = mysqli_fetch_object($jurusan);
@@ -20,15 +27,21 @@ if (isset($_GET['idjurusan'])){
 		}
 	}
 
-	$delete = mysqli_query($conn, "DELETE FROM jurusan WHERE id = {$_GET['idjurusan']}");
+	$delete = mysqli_query($conn,
+		"DELETE FROM jurusan WHERE id = {$_GET['idjurusan']}"
+	);
 	echo '<script>
 		window.location = "jurusan.php?msg=Berhasil menghapus data!";
 	</script>';
 }
+/* * * * * * * * * * * end of kueri untuk menghapus data jurusan */
 
+
+/* kueri untuk menghapus data galeri * * * * * * * * * * * * * * */
 if (isset($_GET['idgaleri'])){
-
-	$galeri = mysqli_query($conn, "SELECT foto FROM galeri WHERE id = {$_GET['idgaleri']}");
+	$galeri = mysqli_query($conn,
+		"SELECT foto FROM galeri WHERE id = {$_GET['idgaleri']}"
+	);
 
 	if(mysqli_num_rows($galeri) > 0){
 		$p = mysqli_fetch_object($galeri);
@@ -37,15 +50,21 @@ if (isset($_GET['idgaleri'])){
 		}
 	}
 
-	$delete = mysqli_query($conn, "DELETE FROM galeri WHERE id = {$_GET['idgaleri']}");
+	$delete = mysqli_query($conn,
+		"DELETE FROM galeri WHERE id = {$_GET['idgaleri']}"
+	);
 	echo '<script>
 		window.location = "galeri.php?msg=Berhasil menghapus data!";
 	</script>';
 }
+/* * * * * * * * * * *  end of kueri untuk menghapus data galeri */
 
+
+/* kueri untuk menghapus data informasi  * * * * * * * * * * * * */
 if (isset($_GET['idinformasi'])){
-
-	$informasi = mysqli_query($conn, "SELECT gambar FROM informasi WHERE id = {$_GET['idinformasi']}");
+	$informasi = mysqli_query($conn,
+		"SELECT gambar FROM informasi WHERE id = {$_GET['idinformasi']}"
+	);
 
 	if(mysqli_num_rows($informasi) > 0){
 		$p = mysqli_fetch_object($informasi);
@@ -54,8 +73,11 @@ if (isset($_GET['idinformasi'])){
 		}
 	}
 
-	$delete = mysqli_query($conn, "DELETE FROM informasi WHERE id = {$_GET['idinformasi']}");
+	$delete = mysqli_query($conn,
+		"DELETE FROM informasi WHERE id = {$_GET['idinformasi']}"
+	);
 	echo '<script>
 		window.location = "informasi.php?msg=Berhasil menghapus data!";
 	</script>';
 }
+/* * * * * * * * * * end of kueri untuk menghapus data informasi */

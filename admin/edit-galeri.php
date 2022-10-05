@@ -1,8 +1,12 @@
+<!-- mirip file edit-pengguna.php -->
+
 <?php
 
 include 'header.php';
 
-$galeri = mysqli_query($conn, "SELECT  * FROM galeri WHERE id = {$_GET['idgaleri']}");
+$galeri = mysqli_query($conn,
+	"SELECT  * FROM galeri WHERE id = {$_GET['idgaleri']}"
+);
 if(mysqli_num_rows($galeri) == 0){
 	echo '<script>window.location = "galeri.php"</script>';
 }
@@ -48,10 +52,14 @@ $p = mysqli_fetch_object($galeri);
 							$allowed_type = ['png','jpg','jpeg','gif'];
 
 							if(!in_array($format, $allowed_type)){
-								echo '<div class="alert alert-error">Format file tidak diizinkan!</div>';
+								echo '<div class="alert alert-error">
+									Format file tidak diizinkan!
+								</div>';
 								return false;
 							} elseif($filesize > 1000000){
-								echo '<div class="alert alert-error">Ukuran file tidak boleh lebih dari 1 Mb!</div>';
+								echo '<div class="alert alert-error">
+									Ukuran file tidak boleh lebih dari 1 Mb!
+								</div>';
 								return false;
 							} else {
 								move_uploaded_file($tmpname, "../uploads/galeri/$rename");
@@ -65,9 +73,13 @@ $p = mysqli_fetch_object($galeri);
 								)");
 
 								if($simpan){
-									echo '<div class="alert alert-success">Berhasil menyimpan!</div>';
+									echo '<div class="alert alert-success">
+										Berhasil menyimpan!
+									</div>';
 								} else {
-									echo '<div class="alert alert-error">Gagal menyimpan!</div>';
+									echo '<div class="alert alert-error">
+										Gagal menyimpan!
+									</div>';
 								}
 							}
 
@@ -88,11 +100,14 @@ $p = mysqli_fetch_object($galeri);
 						");
 
 						if($update){
-							echo '<script>window.location = "galeri.php?msg=Edit data berhasil!";</script>';
+							echo '<script>
+								window.location = "galeri.php?msg=Edit data berhasil!";
+							</script>';
 						} else {
-							echo '<div class="alert alert-error">Gagal mengubah data!</div>';
+							echo '<div class="alert alert-error">
+								Gagal mengubah data!
+							</div>';
 						}
-
 					}
 				?>
 

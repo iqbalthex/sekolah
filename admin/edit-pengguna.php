@@ -2,10 +2,17 @@
 
 include 'header.php';
 
-$pengguna = mysqli_query($conn, "SELECT  * FROM pengguna WHERE id = {$_GET['id']}");
+# mencari pengguna dengan id tertentu
+$pengguna = mysqli_query($conn,
+	"SELECT * FROM pengguna WHERE id = {$_GET['id']}"
+);
+
+# bila id pengguna tidak ditemukan, kembali ke halaman pengguna
 if(mysqli_num_rows($pengguna) == 0){
 	echo '<script>window.location = "pengguna.php"</script>';
 }
+
+# mengambil rincian data pengguna
 $p = mysqli_fetch_object($pengguna);
 
 ?>
@@ -38,7 +45,6 @@ $p = mysqli_fetch_object($pengguna);
 								<?= $p->level == 'Admin' ? 'selected' : '' ?>>Admin</option>
 						</select>
 					</div>
-					<!--button class="btn" onclick="window.location = 'pengguna.php'">Kembali</button-->
 					<button class="btn"><a href="pengguna.php">Kembali</a></button>
 					<input type="submit" name="submit" value="Simpan" class="btn btn-blue" />
 				</form>
@@ -50,6 +56,7 @@ $p = mysqli_fetch_object($pengguna);
 						$level = $_POST['level'];
 						$curr_date = date('Y-m-d H:i:s');
 
+						# update data pengguna pada database
 						$update = mysqli_query($conn, "UPDATE pengguna SET
 							nama = '$nama',
 							username = '$user',
@@ -59,11 +66,14 @@ $p = mysqli_fetch_object($pengguna);
 						");
 
 						if($update){
-							echo '<script>window.location = "pengguna.php?msg=Edit data berhasil!";</script>';
+							echo '<script>
+								window.location = "pengguna.php?msg=Edit data berhasil!";
+							</script>';
 						} else {
-							echo '<div class="alert alert-error">Gagal mengubah data!</div>';
+							echo '<div class="alert alert-error">
+								Gagal mengubah data!
+							</div>';
 						}
-
 					}
 				?>
 
