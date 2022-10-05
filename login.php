@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include 'koneksi.php';
+	include 'koneksi.php'; # menyisipkan kode di dalam file koneksi.php
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,6 @@
 	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
 <div class="page-login">
 	<div class="box box-login">
 		<div class="box-header text-center">
@@ -18,7 +17,7 @@
 		</div>
 		<div class="box-body">
 			<?php
-				if (isset($_GET['msg'])){
+				if (isset($_GET['msg'])){ # menampilkan pesan bila perlu
 					echo "<div class='alert alert-error'>{$_GET['msg']}</div>";
 				}
 			?>
@@ -48,6 +47,7 @@
 							$_SESSION['uname']        = $d->nama;
 							$_SESSION['ulevel']				= $d->level;
 
+							# mengarahkan ke halaman admin bila berhasil login
 							echo "<script>
 								window.location = 'admin';
 							</script>";
@@ -59,14 +59,11 @@
 					}
 				}
 			?>
-
 		</div>
-
 		<div class="box-footer text-center">
 			<a href="index.php">Halaman Utama</a>
 		</div>
 	</div>
 </div>
-
 </body>
 </html>
