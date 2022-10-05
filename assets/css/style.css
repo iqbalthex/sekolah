@@ -7,10 +7,10 @@
 	box-sizing: border-box;
 }
 
-a{text-decoration: none}
-.float-left{float: left}
-.bg-light{background: #dde}
-.clearfix{clear: both}
+a{ text-decoration: none }
+.float-left{ float: left }
+.bg-light{ background: #dde }
+.clearfix{ clear: both }
 
 .container{
 	width: 80%;
@@ -37,9 +37,7 @@ a{text-decoration: none}
 	background: f2f2f2;
 }
 
-.box-body{
-	padding: 16px;
-}
+.box-body{ padding: 16px }
 
 .box-footer{
 	border-top: 1px solid #ddd;
@@ -47,9 +45,7 @@ a{text-decoration: none}
 	padding: 16px;
 }
 
-.form-group{
-	margin-bottom: 15px;
-}
+.form-group{ margin-bottom: 15px }
 
 .form-group label{
 	display: block;
@@ -63,9 +59,7 @@ a{text-decoration: none}
 	border: 1px solid #ddd;
 }
 
-.box-login{
-	width: 300px;
-}
+.box-login{ width: 300px }
 
 .btn{
 	border: 1px solid #bbb;
@@ -84,11 +78,11 @@ a{text-decoration: none}
 	border: 1px solid #2E8BC0;
 }
 
-.btn-blue:hover{background: #145DA0}
-.text-center{text-align: center !important}
+.btn-blue:hover{ background: #145DA0 }
+.text-center{ text-align: center !important }
 
 .alert{
-	margin-top: 10px;
+	margin: 10px 0;
 	padding: 10px 16px;
 	border: 1px solid;
 }
@@ -114,7 +108,7 @@ a{text-decoration: none}
 	z-index: 1000;
 }
 
-.navbar a{color: #fff}
+.navbar a{ color: #fff }
 
 .navbar-brand{
 	display: inline-block;
@@ -140,11 +134,11 @@ a{text-decoration: none}
 	display: none;
 }
 
-.nav-menu li:hover{background: #145DA0}
-.nav-menu li .dropdown li:hover a{color: #eee}
-.nav-menu li .dropdown a{color: #777}
-.nav-menu li:hover .dropdown{display: block}
-.content{padding: 80px 0 30px}
+.nav-menu li:hover{ background: #145DA0 }
+.nav-menu li .dropdown li:hover a{ color: #eee }
+.nav-menu li .dropdown a{ color: #777 }
+.nav-menu li:hover .dropdown{ display: block }
+.content{ padding: 80px 0 30px}
 
 .footer{
 	position: fixed;
@@ -175,9 +169,9 @@ a{text-decoration: none}
 	text-align: center;
 }
 
-.text-green{color: #18A558}
-.text-orange{color: #0083FF}
-.text-red{color: #ED3D40}
+.text-green{ color: #18A558 }
+.text-orange{ color: #0083FF }
+.text-red{ color: #ED3D40 }
 
 .input-group:after{
 	content: "";
@@ -203,4 +197,9 @@ a{text-decoration: none}
 	font-size: 16px;
 	border: 1px solid #ddd;
 	border-left: none;
+}
+
+.image{
+	border: 1px solid #ddd;
+	padding: 5px;
 }
